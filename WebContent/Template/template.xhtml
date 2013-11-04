@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+<title>
+	<ui:insert name="title">
+		<h:outputText value="Teste" />
+	</ui:insert>
+</title>
+<h:outputStylesheet library="css" name="style.css" />
+
+</h:head> 
+<h:body>
+	<div align="center">
+		<p:layout style="min-width:1020px;max-width:1020px;min-height:600px">
+			<p:layoutUnit position="north" size="200">
+				  <h:graphicImage  url="/Template/img/topo.png" /> 
+			</p:layoutUnit>
+			
+	<!--  	<p:layoutUnit position="west" size="220">
+			<ui:insert name="name">
+				<h:form>
+					<p:menu style="width: 200px">
+						<p:submenu>
+							<p:menuitem value="Login" />
+							<p:menuitem value="Cadastro" />
+						</p:submenu>	
+					</p:menu>
+				</h:form>
+			</ui:insert>
+		</p:layoutUnit>	 -->
+		
+		<p:layoutUnit position="center">
+			<ui:insert name="centro">
+			O que estiver aqui vai ser substituido.
+			</ui:insert>
+		</p:layoutUnit>
+		
+		</p:layout>
+
+	</div>
+
+
+
+
+
+</h:body>
+</html>
