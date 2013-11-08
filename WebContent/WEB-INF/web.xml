@@ -14,4 +14,9 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>*.jsf</url-pattern>
   </servlet-mapping>
+  <!--  Theme do primifaces
+  <context-param>   
+     <param-name>primefaces.THEME</param-name>   
+     <param-value>start</param-value>   
+   </context-param>  -->
 </web-app>

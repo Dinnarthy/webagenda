@@ -1,39 +1,40 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
- 
- <ui:composition template="/Template/template.xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui" 
-	   >
-	
-	
-		<ui:define name="title">.::SisClinic::.</ui:define>
-		
-		
-	
-		<ui:define name="centro">
-		<h:form>
-		<h:commandButton  value="Teste" />
-			<p:panelGrid columns="2">
-				<f:facet name="header">Agenda Medica</f:facet>
-			
-			
-			</p:panelGrid>
-				
-			
-				
-				
-			
-		</h:form>	
-			
-		
-		
-		
-		</ui:define>
-	
-	
-	
-	</ui:composition>
-	
-	
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/Template/template.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="title">.::SisClinic::.</ui:define>
+
+
+
+	<ui:define name="centro">
+		<div id="geral_index">
+
+			<h:form id="form_btLogin">
+				<p:panel style="width:800px" footer="">
+					<a href="#"> <h:graphicImage value=""
+							url="/resources/img/bt_agenda_medica300x100.png" />
+					</a>
+					<a href="#"> <h:graphicImage value=""
+							url="/resources/img/bt_agenda_paciente300x100.png" />
+
+					</a>
+				</p:panel>
+			</h:form>
+		</div>
+
+
+
+
+
+	</ui:define>
+
+
+
+</ui:composition>
+
