@@ -1,0 +1,44 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/Template/template.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="title">.::SisClinic::.</ui:define>
+
+
+
+	<ui:define name="centro">
+	
+		<div id="geral_index">
+		
+
+			<h:form id="form_btLogin">
+				<p:panel style="width:800px" footer="">
+					<h:commandButton action="#{indexBean.carregarLogin('M')}" value="" image="/resources/img/bt_agenda_medica300x100.png" ajax="false" >
+						<!-- <f:attribute name="tipo" value="M" />  -->
+					</h:commandButton>
+					<h:commandButton action="#{indexBean.carregarLogin('P')}" value="" image="/resources/img/bt_agenda_paciente300x100.png" ajax="false" >
+					<!--	<f:attribute name="tipo" value="P" /> -->
+					</h:commandButton>
+					
+					<h:outputLink value="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout">
+                    <h:outputText value="Sair"/>
+                </h:outputLink>
+				</p:panel>
+			</h:form>
+		</div>
+
+
+
+
+
+	</ui:define>
+
+
+
+</ui:composition>

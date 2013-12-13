@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/Template/template.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="title">.::SisClinic::.</ui:define>
+
+
+
+	<ui:define name="centro">
+
+		<h:form id="form_marcarConsulta">
+			<h:form rendered="#{indexBean.tipo =='P'}">
+				<p:panel id="painel_p" style="width:900px;height:340px">
+					<h:panelGrid columns="2" style="float:left">
+
+						<p:outputLabel value="Nome Completo :" for="nome" />
+						<p:inputText value="" id="nome" label="Nome Completo" size="70"
+							maxlength="70" required="true"
+							requiredMessage="Por favor digite seu nome!"
+							validatorMessage="Nome permitido
+					apenas acima de 7 caracteres!">
+							<f:validateLength minimum="7" />
+						</p:inputText>
+
+						<p:outputLabel value="Procedimento :" for="procedimento" />
+						<p:inputText value="Consulta" id="procedimento" disabled="true"
+							label="Procedimento" />
+
+						<p:outputLabel value="Medico : " />
+						<p:selectOneMenu effect="fold">
+							<f:selectItem itemLabel="Selecione seu medico"
+								itemDisabled="true" itemValue="" />
+						</p:selectOneMenu>
+
+						<p:outputLabel value="Convenios :" />
+						<p:selectOneMenu effect="fold">
+							<f:selectItem itemLabel="Selecione o Convenio"
+								itemDisabled="true" itemValue="" />
+						</p:selectOneMenu>
+					</h:panelGrid>
+
+					<p:calendar value="#{indexBean.data}" mode="inline" id="inlineCal"
+						locale="pt_BR" style="float:left" />
+					<h:commandButton
+						style="float:left;margin-left:30px; margin-top:80px"
+						actionListener="#" image="/resources/img/relgio64x64.png" />
+
+				</p:panel>
+			</h:form>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

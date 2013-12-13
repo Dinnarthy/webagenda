@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -15,45 +14,57 @@
 
 	<h:outputScript name="locale-primefaces.js" library="js" />
 	<h:outputStylesheet name="style.css" />
-	
+	<style type="text/css">
+                /*Para o os submenus do layout north sobrepor os layout do centro*/
+				.ui-layout-north .ui-layout-unit-content {
+                    overflow:visible !important;
+                }
+                .ui-layout-north {
+                    z-index:20 !important;
+                    overflow:visible !important;
+                }
+                </style>
 </h:head>
+
+
+
 <h:body>
 	<f:view encoding="ISO-8859-1">
 	<div align="center">
 		<p:layout style="min-width:1020px;max-width:1020px;min-height:600px;"
 			fullPage="true">
-			<p:layoutUnit position="north" style="min-height:120px;">
-				<a href="#"> <h:graphicImage class="logo_topo"
-						url="/resources/img/logo400x100.png" />
-				</a>
-				
+			<p:layoutUnit position="north" style="border:none;min-height:50px;">
+				<p:menubar autoDisplay="false">
+	<p:submenu label="Cadastro">
+		<p:submenu label="Atendimento">
+			<p:menuitem value="Paciente" url="#" onclick="novoPaciente.show()" />
+					
+		</p:submenu>
+		
+		<p:submenu label="Opção 2">
+		
+		</p:submenu>
+	
+	</p:submenu>
+	
+	<p:submenu label="Relatórios">
+	
+	</p:submenu>
+	
+	<p:menuitem  value="Sair" url="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout" icon="ui-icon-close"/>
+
+
+</p:menubar>
 			</p:layoutUnit>
 
-			<!--  	<p:layoutUnit position="west" size="220">
-			<ui:insert name="name">
-				<h:form>
-					<p:menu style="width: 200px">
-						<p:submenu>
-							<p:menuitem value="Login" />
-							<p:menuitem value="Cadastro" />
-						</p:submenu>	
-					</p:menu>
-				</h:form>
-			</ui:insert>
-		</p:layoutUnit>	 -->
+			
 
 			<p:layoutUnit position="center" style="border:none;">
 				<ui:insert name="centro">
-			O que estiver aqui vai ser substituido.é
+			O que estiver aqui vai ser substituido.é 2
 			</ui:insert>
 			</p:layoutUnit>
-			<p:layoutUnit position="south" size="75">
-				<h:graphicImage value="" style="float:left" url="/resources/img/logo100x40.png" />
-				<p:commandLink actionListener="#" style="float:left ;margin-top:15px;margin-left:10px" >
-					<h:outputText value="Inicio" />
-				</p:commandLink>
-
-			</p:layoutUnit>
+			
 		</p:layout>
 	</div>
 
@@ -65,4 +76,3 @@
 </f:view>
 </h:body>
 </html>
-

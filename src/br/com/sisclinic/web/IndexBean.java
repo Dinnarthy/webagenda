@@ -50,7 +50,16 @@ public class IndexBean {
 
 	public String carregarLogin(String tipo){
 		this.tipo=tipo;
-		return "login.xhtml";
+		if(tipo=="P"){
+			return "/paciente/marcarConsulta.xhtml";
+		}
+		else{
+			if (tipo=="M") {
+				return "/medico/index.xhtml";
+			} else {
+				return "index.xhtml";
+			}
+		}
 			
 		
 		

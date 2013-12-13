@@ -1,7 +1,5 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<ui:composition template="/Template/template.xhtml"
+<ui:composition template="/Template/template2.xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -13,22 +11,20 @@
 
 
 	<ui:define name="centro">
-		<div id="geral_index">
+	
+	<h:graphicImage url="/resources/img/logo450x150transp.png" style="margin-top:100px" />
+	
+	<p:dialog header="Paciente" draggable="false" width="1000" 
+	height="600" widgetVar="novoPaciente" closable="true" resizable="false" appendToBody="true" modal="true" minimizable="false">
+    	<ui:include src="/restrict/novoPaciente.xhtml" />        
+    </p:dialog>
+		
+<p:dock position="bottom">
+	<p:menuitem value="Home" icon="/resources/icons/home64x64.png" url="#"/>
+	<p:menuitem value="Recepcao" icon="/resources/icons/recepcao64x64.png"  url="#" />
+	<p:menuitem value="Consultorio" icon="/resources/icons/consultorio64x64.png" url="#" />
 
-			<h:form id="form_btLogin">
-				<p:panel style="width:800px" footer="">
-					<h:commandButton action="#{indexBean.carregarLogin('M')}" value="" image="/resources/img/bt_agenda_medica300x100.png" ajax="false" >
-						<!-- <f:attribute name="tipo" value="M" />  -->
-					</h:commandButton>
-					<h:commandButton action="#{indexBean.carregarLogin('P')}" value="" image="/resources/img/bt_agenda_paciente300x100.png" ajax="false" >
-					<!--	<f:attribute name="tipo" value="P" /> -->
-					</h:commandButton>
-					
-					
-				</p:panel>
-			</h:form>
-		</div>
-
+</p:dock>
 
 
 
@@ -38,4 +34,3 @@
 
 
 </ui:composition>
-

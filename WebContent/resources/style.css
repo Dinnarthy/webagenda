@@ -1,10 +1,9 @@
-body{background-color:black;
+body{background-color:white;
 font-size:15px;}
 .logo_topo{float:left;margin-top: 20px; padding-top: 0px}
 #calendario_agenda{padding-top:0px;float:right}
 
 
 .ui-datepicker {  
-    font-size: 80% !important; }
+    font-size: 60% !important; }
     
-.carrinho{ background-image: url(/resources/img/relgio64x64.png)!important; } 

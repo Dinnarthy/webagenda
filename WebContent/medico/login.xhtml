@@ -13,31 +13,30 @@
 
 
 	<ui:define name="centro">
-		
-		
-
-		<!--  <h:form rendered="#{indexBean.tipo =='M'}" > --> 
-			<center>
-                <h:outputText value="Usuario ou senha incorretos!" rendered="#{param.erro =='invalido'}" style="color: darkred"/>
+		<center>
+                <h:outputText value="Usuario ou senha incorretos!" rendered="#{param.erro}" style="color: darkred"/>
          </center>
-         <p:dialog header="Login" modal="false" closable="false" resizable="false" draggable="false" position="left"  visible="true" style="margin-left:100px" >
+			 --> 
+		<!--   <h:form rendered="#{indexBean.tipo =='M'}" > -->  
 			<form action="j_spring_security_check" method="post">
-				
+			<p:panel id="painel_m" header="Medicos" style="width:600px;height:340px">
 				<h:panelGrid columns="2" style="float:left">
 					<h:outputLabel for="j_username" value="Username: *" /> 
                     <h:inputText id="j_username" required="true"/>
                     <h:outputLabel for="j_password" value="Password: * " />
                     <h:inputSecret id="j_password" required="true"/>
-																	
-				</h:panelGrid>
-				<br />
-					<h:commandButton value="Login"  />
-					<h:commandButton value="Limpar" type="reset" />
 					
-			
-			
+					<h:commandButton value="Login" />
+					<h:commandButton value="Limpar" type="reset" />
+														
+				</h:panelGrid>
+					
+					
+			</p:panel>
 			</form>
-		</p:dialog>
+		
 	</ui:define>
 
 </ui:composition>
+ 
+ 
