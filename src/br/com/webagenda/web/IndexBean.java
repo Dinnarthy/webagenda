@@ -1,4 +1,4 @@
-package br.com.sisclinic.web;
+package br.com.webagenda.web;
 
 import java.util.Date;
 

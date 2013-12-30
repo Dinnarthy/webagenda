@@ -8,7 +8,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 
-	<ui:define name="title">.::SisClinic::.</ui:define>
+	<ui:define name="title">.::WebAgenda::.</ui:define>
 
 
 
@@ -16,18 +16,18 @@
 		
 		
 
-		<!--  <h:form rendered="#{indexBean.tipo =='M'}" > --> 
+		
 			<center>
-                <h:outputText value="Usuario ou senha incorretos!" rendered="#{param.erro =='invalido'}" style="color: darkred"/>
+                <h:outputText value="Usuario ou senha incorretos!" rendered="#{param.erro =='invalido'}" style="color: red"/>
          </center>
          <p:dialog header="Login" modal="false" closable="false" resizable="false" draggable="false" position="left"  visible="true" style="margin-left:100px" >
 			<form action="j_spring_security_check" method="post">
 				
 				<h:panelGrid columns="2" style="float:left">
 					<h:outputLabel for="j_username" value="Username: *" /> 
-                    <h:inputText id="j_username" required="true"/>
+                    <h:inputText id="j_username" required="true" title="Digite o Usuario"/>
                     <h:outputLabel for="j_password" value="Password: * " />
-                    <h:inputSecret id="j_password" required="true"/>
+                    <h:inputSecret id="j_password" required="true" title="Digite sua Senha"/>
 																	
 				</h:panelGrid>
 				<br />

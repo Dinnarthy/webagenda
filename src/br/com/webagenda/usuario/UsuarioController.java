@@ -1,4 +1,4 @@
-package br.com.sisclinic.usuario;
+package br.com.webagenda.usuario;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

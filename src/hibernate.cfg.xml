@@ -8,7 +8,7 @@
     
     	<!-- Drive do Mysql -->
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sisclinic</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/webagenda</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="current_session_context_class">thread</property>
@@ -34,7 +34,10 @@
 		<!-- CONFIGURAÇÕES DO POOL DE CONEXÕES -->
 
 		<!-- Mapeamentos -->
-		<mapping class="br.com.sisclinic.usuario.Autorizacao" />
-		<mapping class="br.com.sisclinic.usuario.Usuario" />
+		<mapping class="br.com.webagenda.usuario.Autorizacao" />
+		<mapping class="br.com.webagenda.usuario.Usuario" />
+		<mapping class="br.com.webagenda.paciente.Paciente"/>
+		<mapping class="br.com.webagenda.EstadoCidade.Estado"/>
+		<mapping class="br.com.webagenda.EstadoCidade.Cidade"/>
 	</session-factory>
 </hibernate-configuration>

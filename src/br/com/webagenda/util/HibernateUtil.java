@@ -1,4 +1,4 @@
-package br.com.sisclinic.util;
+package br.com.webagenda.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

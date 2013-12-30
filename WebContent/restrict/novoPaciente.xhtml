@@ -10,6 +10,7 @@
 
 </h:head>
 <body>
+<f:view>
 	<p:tabView id="tabPaciente">
 
 		<p:tab id="tabCadastroPaciente" title="Cadastro">
@@ -38,46 +39,164 @@
 						</p:selectOneMenu>
 
 					</h:panelGrid>
-					
-				<p:outputLabel value="Nascimento" for="nascimento" />
-				
-				<h:panelGrid columns="7">
-				<p:inputMask mask="99/99/9999" id="nascimento" size="7" />
-					<p:outputLabel value="Fone Residêncial" for="residencial" />
-					<p:inputMask mask="(99)9999-9999" id="residencial" size="10" />
-					<p:outputLabel value="Celular" for="celular" />
-					<p:inputMask mask="(99)9999-9999" id="celular" size="10" />
-					<p:outputLabel value="Fone Comercial" for="comercial" />
-					<p:inputMask mask="(99)9999-9999" id="comercial" size="10" />
-				</h:panelGrid>
-				<p:outputLabel value="CPF" for="cpf" />
-				<h:panelGrid columns="7">
-				<p:inputMask mask="999.999.999-99" id="cpf" size="10" />
-					<p:outputLabel value="RG" for="rg" />
-					<p:inputText id="rg" size="10" maxlength="10" />
-					<p:outputLabel value="Orgão Emissor" for="orgaoEmissor" />
-					<p:inputText id="orgaoEmissor" size="10" maxlength="10" />
-					<p:outputLabel value="Bloqueio" for="bloqueio" />
-					<p:selectManyCheckbox id="bloqueio">
-						<f:selectItem itemLabel="" itemValue="B" />
-					</p:selectManyCheckbox>
-				
-				</h:panelGrid>
-				<p:outputLabel value="Email" for="email" />
-				<h:panelGrid columns="1">
-				<p:inputText id="email" value=""
-						validatorMessage="E-mail invalido!" size="50" maxlength="50">
-						<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+" />
-					</p:inputText>
-				</h:panelGrid>
-				</h:panelGrid>
-				
 
-				
-				
-				
+					<p:outputLabel value="Nascimento" for="nascimento" />
+
+					<h:panelGrid columns="7">
+						<p:inputMask mask="99/99/9999" id="nascimento" size="7" />
+						<p:outputLabel value="Fone Residêncial" for="residencial" />
+						<p:inputMask mask="(99)9999-9999" id="residencial" size="10" />
+						<p:outputLabel value="Celular" for="celular" />
+						<p:inputMask mask="(99)9999-9999" id="celular" size="10" />
+						<p:outputLabel value="Fone Comercial" for="comercial" />
+						<p:inputMask mask="(99)9999-9999" id="comercial" size="10" />
+					</h:panelGrid>
+					<p:outputLabel value="CPF" for="cpf" />
+					<h:panelGrid columns="7">
+						<p:inputMask mask="999.999.999-99" id="cpf" size="10" />
+						<p:outputLabel value="RG" for="rg" />
+						<p:inputText id="rg" size="10" maxlength="10" />
+						<p:outputLabel value="Orgão Emissor" for="orgaoEmissor" />
+						<p:inputText id="orgaoEmissor" size="10" maxlength="10" />
+						<p:outputLabel value="Bloqueio" for="bloqueio" />
+						<p:selectManyCheckbox id="bloqueio">
+							<f:selectItem itemLabel="" itemValue="B" />
+						</p:selectManyCheckbox>
+
+					</h:panelGrid>
+					<p:outputLabel value="Email" for="email" />
+					<h:panelGrid columns="1">
+						<p:inputText id="email" value=""
+							validatorMessage="E-mail invalido!" size="90" maxlength="50">
+							<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+" />
+						</p:inputText>
+					</h:panelGrid>
+				</h:panelGrid>
+
+
 			</p:panel>
+
+			<p:tabView id="tabPaciente2" style="height:230px">
 			
+				<p:tab id="tabFiliacao" title="Filiação">
+					<h:panelGrid columns="2">
+						<p:outputLabel value="Pai :" for="pai" />
+						<h:panelGrid columns="1">
+							<p:inputText id="pai" size="50" maxlength="50" />
+						</h:panelGrid>
+						<p:outputLabel value="Mãe :" for="mae" />
+						<h:panelGrid columns="1">
+							<p:inputText id="mae" size="50" maxlength="50" />
+						</h:panelGrid>
+					</h:panelGrid>
+				</p:tab>
+
+				<p:tab id="tabEndereco" title="Endereço">
+				<h:form id="formEndereco">
+				<p:messages  autoUpdate="true" />
+					<h:panelGrid id="endereco" columns="2">
+						<h:outputLabel value="Estado:" for="estado" />
+						<h:panelGrid columns="3">
+						<p:selectOneMenu id="comboEstado" value="#{estadoCidadeBean.estado}" 
+						 	 converter="converterEstado"  required="true"> 
+								
+								<f:selectItem itemLabel="Selecione" itemValue="" />
+								<f:selectItems value="#{estadoCidadeBean.estados}" var="e"	
+								 itemValue="#{e}" itemLabel="#{e.nome}" />
+										<p:ajax update="comboCidade" immediate="true" event="change"
+											listener="#{estadoCidadeBean.listaCidades}" />
+									</p:selectOneMenu>
+							
+							<h:outputLabel value="Cidade:" for="cidade" />
+							<p:selectOneMenu id="comboCidade"  value="#{estadoCidadeBean.cidade}" 
+							 converter="converterCidade" required="true">
+								<f:selectItem itemLabel="Selecione"  />
+								<f:selectItems value="#{estadoCidadeBean.cidades}" var="c" 
+								itemValue="#{c}" itemLabel="#{e.nome}"/>
+							</p:selectOneMenu>	
+						</h:panelGrid>
+						<p:outputLabel value="Tipo do Logradouro" for="tipoDeLogradouro" />
+						<h:panelGrid columns="3">
+							<p:selectOneMenu id="tipoDeLogradouro">
+								<f:selectItem itemLabel="Aeroporto" itemValue="aeroporto" />
+								<f:selectItem itemLabel="Alameda" itemValue="alameda" />
+								<f:selectItem itemLabel="Area" itemValue="area" />
+								<f:selectItem itemLabel="Avenida" itemValue="avenida" />
+								<f:selectItem itemLabel="Beco" itemValue="beco" />
+								<f:selectItem itemLabel="Campo" itemValue="campo" />
+								<f:selectItem itemLabel="Chácara" itemValue="chacara" />
+								<f:selectItem itemLabel="Colônia" itemValue="colonia" />
+								<f:selectItem itemLabel="Condominio" itemValue="condominio" />
+								<f:selectItem itemLabel="Conjunto" itemValue="conjunto" />
+								<f:selectItem itemLabel="Distrito" itemValue="distrito" />
+								<f:selectItem itemLabel="Esplanada" itemValue="esplanada" />
+								<f:selectItem itemLabel="Estação" itemValue="estacao" />
+								<f:selectItem itemLabel="Estrada" itemValue="estrada" />
+								<f:selectItem itemLabel="Favela" itemValue="favela" />
+								<f:selectItem itemLabel="Fazenda" itemValue="fazenda" />
+								<f:selectItem itemLabel="Feira" itemValue="feira" />
+								<f:selectItem itemLabel="Granja" itemValue="granja" />
+								<f:selectItem itemLabel="Jardim" itemValue="jardim" />
+								<f:selectItem itemLabel="Ladeira" itemValue="ladeira" />
+								<f:selectItem itemLabel="Lago" itemValue="lago" />
+								<f:selectItem itemLabel="Lagoa" itemValue="lagoa" />
+								<f:selectItem itemLabel="Largo" itemValue="largo" />
+								<f:selectItem itemLabel="Loteamento" itemValue="loteamento" />
+								<f:selectItem itemLabel="Morro" itemValue="morro" />
+								<f:selectItem itemLabel="Núcleo" itemValue="nucleo" />
+								<f:selectItem itemLabel="Outros" itemValue="outros" />
+								<f:selectItem itemLabel="Parque" itemValue="parque" />
+								<f:selectItem itemLabel="Passarela" itemValue="passarela" />
+								<f:selectItem itemLabel="Pátio" itemValue="patio" />
+								<f:selectItem itemLabel="Praça" itemValue="praca" />
+								<f:selectItem itemLabel="Quadra" itemValue="quadra" />
+								<f:selectItem itemLabel="Recanto" itemValue="recanto" />
+								<f:selectItem itemLabel="Residencial" itemValue="residencial" />
+								<f:selectItem itemLabel="Rodovia" itemValue="rodovia" />
+								<f:selectItem itemLabel="Rua" itemValue="rua" />
+								<f:selectItem itemLabel="Setor" itemValue="setor" />
+								<f:selectItem itemLabel="Sítio" itemValue="sitio" />
+								<f:selectItem itemLabel="Travessa" itemValue="travessa" />
+								<f:selectItem itemLabel="Trecho" itemValue="trecho" />
+								<f:selectItem itemLabel="Trevo" itemValue="trevo" />
+								<f:selectItem itemLabel="Vale" itemValue="vale" />
+								<f:selectItem itemLabel="Vereda" itemValue="vereda" />
+								<f:selectItem itemLabel="Via" itemValue="via" />
+								<f:selectItem itemLabel="Viaduto" itemValue="viaduto" />
+								<f:selectItem itemLabel="Viela" itemValue="viela" />
+								<f:selectItem itemLabel="Vila" itemValue="vila" />
+							</p:selectOneMenu>
+							<p:outputLabel value="Logradouro " for="logradouro" />
+							<p:inputText id="logradouro" size="50" maxlength="50" />
+						</h:panelGrid>
+						<p:outputLabel value="Bairro " for="bairro" />
+						<h:panelGrid columns="5">
+						<p:inputText id="bairro" size="20" maxlength="30" />
+						<p:outputLabel value="Número" for="numero"/>
+						<p:inputText id="numero" size="6" maxlength="6" />
+						<p:outputLabel value="Complemento" for="complemento" />
+						<p:inputText id="complemento" size="30" maxlength="30" />
+						
+						</h:panelGrid>
+					</h:panelGrid>
+					</h:form>
+				</p:tab>
+				
+				<p:tab title="Convênio">
+				
+				</p:tab>			
+
+			</p:tabView>
+		<p:panel>
+		<p:commandButton value="Novo" action="#" />
+		<p:commandButton value="Editar" action="#" />
+		<p:commandButton value="Excluir" action="#" />
+		<p:commandButton value="Cancelar" action="#" />
+		<p:commandButton value="Fechar" global="false" 
+		process="@this" readonly="true" transient="true" 
+		immediate="true"  style="margin-top: 5px;" 
+		onclick="novoPaciente.hide();return false;"/> 
+		</p:panel>
 
 		</p:tab>
 
@@ -87,9 +206,17 @@
 				<p:graphicImage value="/resources/img/search24x24.png" />
 			</f:facet>
 			
-			Buscar
+			buscar
 		</p:tab>
 
 	</p:tabView>
+	</f:view>
 </body>
 </html>
+
+
+
+
+
+
+

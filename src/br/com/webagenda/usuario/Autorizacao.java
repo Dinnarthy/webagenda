@@ -1,4 +1,4 @@
-package br.com.sisclinic.usuario;
+package br.com.webagenda.usuario;
 
 import java.io.Serializable;
 

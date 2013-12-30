@@ -1,4 +1,4 @@
-package br.com.sisclinic.web.filter;
+package br.com.webagenda.web.filter;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 
 import org.hibernate.SessionFactory;
 
-import br.com.sisclinic.util.HibernateUtil;
+import br.com.webagenda.util.HibernateUtil;
 
 
 public class HibernateSessionRequestFilter implements Filter {

@@ -1,4 +1,4 @@
-package br.com.sisclinic.usuario;
+package br.com.webagenda.usuario;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,9 +13,12 @@ public class Usuario implements Serializable {
  
     @Id
     private String username;
+    
     private String password;
+    
     @Column(name = "enable", columnDefinition = "BOOLEAN")
     private boolean enable;
+    
     @OneToMany
     private List<Autorizacao> autorizacoes;
  
