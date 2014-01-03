@@ -10,18 +10,18 @@
 
 </h:head>
 <body>
-<f:view>
-	<p:tabView id="tabPaciente">
+<p:growl id="msgs" showDetail="true"/> 
+	<p:tabView id="tabPaciente" >
 
-		<p:tab id="tabCadastroPaciente" title="Cadastro">
-			<p:panel>
+		<p:tab id="tabCadastroPaciente" title="Cadastro" >
+			<p:panel id="pPaciente">
 				<h:panelGrid columns="2">
 					<p:outputLabel value="Nome" for="nomeCompleto" />
 					<h:panelGrid columns="3">
-						<p:inputText value="" id="nomeCompleto" maxlength="50" size="50"
+						<p:inputText disabled="true" value="" id="nomeCompleto" maxlength="50" size="50"
 							required="true" requiredMessage="Campo Nome Completo obrigatório" />
 
-						<p:selectOneMenu id="sexo" required="true"
+						<p:selectOneMenu disabled="true" id="sexo" required="true"
 							requiredMessage="Campo sexo obrigatótio!">
 							<f:selectItem itemLabel="Sexo" itemValue="" />
 							<f:selectItem itemLabel="Masculino" itemValue="M" />
@@ -93,7 +93,7 @@
 
 				<p:tab id="tabEndereco" title="Endereço">
 				<h:form id="formEndereco">
-				<p:messages  autoUpdate="true" />
+				
 					<h:panelGrid id="endereco" columns="2">
 						<h:outputLabel value="Estado:" for="estado" />
 						<h:panelGrid columns="3">
@@ -103,7 +103,7 @@
 								<f:selectItem itemLabel="Selecione" itemValue="" />
 								<f:selectItems value="#{estadoCidadeBean.estados}" var="e"	
 								 itemValue="#{e}" itemLabel="#{e.nome}" />
-										<p:ajax update="comboCidade" immediate="true" event="change"
+										<p:ajax update="comboCidade"  event="change"
 											listener="#{estadoCidadeBean.listaCidades}" />
 									</p:selectOneMenu>
 							
@@ -112,7 +112,7 @@
 							 converter="converterCidade" required="true">
 								<f:selectItem itemLabel="Selecione"  />
 								<f:selectItems value="#{estadoCidadeBean.cidades}" var="c" 
-								itemValue="#{c}" itemLabel="#{e.nome}"/>
+								itemValue="#{c}" itemLabel="#{c.nome}"/>
 							</p:selectOneMenu>	
 						</h:panelGrid>
 						<p:outputLabel value="Tipo do Logradouro" for="tipoDeLogradouro" />
@@ -210,7 +210,7 @@
 		</p:tab>
 
 	</p:tabView>
-	</f:view>
+	
 </body>
 </html>
 
