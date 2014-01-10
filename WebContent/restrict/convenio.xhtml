@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+
+<p:tabView id="tabConvenio">
+
+<p:tab id="tabCadastro" title="Cadastro">
+	<h:panelGrid columns="2">
+	<p:outputLabel value="Registro" for="registro" />
+	<h:panelGrid columns="8">
+	<h:inputText value="" id="registro" disabled="true" size="4" />
+	<p:outputLabel value="Descrição" for="descricao" />
+	<h:inputText id="descricao" value="" size="35" />
+	<p:outputLabel for="sigla" value="Sigla" />
+	<h:inputText id="sigla" value="" size="10" />
+	<p:outputLabel for="tabela" value="Tabela" />
+	<h:inputText value="" id="tabela" size="6" />
+	<p:commandLink>
+		<p:graphicImage value="/resources/img/search24x24.png" />
+	</p:commandLink>
+	
+	</h:panelGrid>
+	<p:outputLabel for="tipoFaturamento" value="Tipo de Faturamento" />
+	<h:panelGrid columns="5">
+	<h:selectOneMenu value="" id="tipoFaturamento">
+	<f:selectItem itemLabel="Faturado" itemValue="faturado"/>
+	<f:selectItem itemLabel="Carteira" itemValue="carteira"/>
+	<f:selectItem itemLabel="Cortesia" itemValue="Cortesia"/>
+	</h:selectOneMenu>	
+	<h:outputLabel value="Registro ANS" for="registroAns" />
+	<h:inputText value="" size="10" id="registroAns" />
+	<h:outputLabel value="Cod.Empresa na Operadora" for="codEmpresaOperadora" />
+	<h:inputText value="" id="codEmpresaOperadora" />
+	</h:panelGrid>
+	</h:panelGrid>
+	<p:tabView id="tabConvenio2">
+	<p:tab title="Dados Principais">
+	<h:panelGrid columns="2">
+	
+	
+	<h:selectBooleanCheckbox value="#"   />
+	<h:outputLabel value="Guia Tiss"  />
+	<h:selectBooleanCheckbox value="#" />
+	<h:outputLabel value="Mais de um Modelo de Guia Tiss" />
+	<h:selectBooleanCheckbox value="#" />
+	<h:outputLabel value="Impressão total da Guia" />
+	<h:selectBooleanCheckbox value="#" />
+	<h:outputLabel value="Convênio Suspenso" />
+	<h:selectBooleanCheckbox value="#" />
+	<h:outputLabel value="Gerar Guia" />
+	<h:selectBooleanCheckbox value="#" />
+	<h:outputLabel value="Várias Guias" />
+	<h:selectBooleanCheckbox value="#" />
+	<h:outputLabel value="Cid Obrigatório" />
+	<h:selectBooleanCheckbox value="#" />
+	<h:outputLabel value="Controla Intervalo de Guias" />
+	</h:panelGrid>
+	<h:panelGrid columns="4">
+	<h:outputLabel value="Nº Guia Inicial" for="nGuiaInicial" />
+	<h:inputText value="" id="nGuiaInicial" size="5" />
+	<h:outputLabel value="Nº Guia Final" for="nGuiaFinal" />
+	<h:inputText value="" id="nGuiaFinal" size="5" />
+	</h:panelGrid>
+	
+	</p:tab>
+	
+	
+	</p:tabView>
+
+
+</p:tab>
+
+<p:tab id="tabConsulta" >
+<f:facet name="title">
+				<p:graphicImage value="/resources/img/search24x24.png" />
+			</f:facet>
+	
+
+
+</p:tab>
+
+</p:tabView>
+
+</body> 
+</html>

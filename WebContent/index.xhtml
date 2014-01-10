@@ -14,17 +14,27 @@
 	
 	
 						
-						
+				
 	
 	<h:graphicImage url="/resources/img/logo450x150transp.png" style="margin-top:100px" />
 	
-	<p:dialog header="Paciente" draggable="false" width="1000" 
+	<p:dialog id="dialogPaciente"  header="Paciente" draggable="false" width="1000" 
 	height="600" widgetVar="novoPaciente" closable="true" resizable="false" appendToBody="true" modal="true" minimizable="false">
-    	<ui:include src="/restrict/novoPaciente.xhtml" />        
+    	
+    	<ui:include id="id" src="/restrict/novoPaciente.xhtml" />  
+    	 
     </p:dialog>
 		
+	<p:dialog id="dialogConvenio"  header="Convenio" draggable="false" width="1000" 
+	height="600" widgetVar="convenio" closable="true" resizable="false" appendToBody="true" modal="true" minimizable="false">
+    	
+    	<ui:include id="id" src="/restrict/convenio.xhtml" />  
+    	 
+    </p:dialog>	
+		
+		
 <p:dock position="bottom">
-	<p:menuitem value="Home" icon="/resources/icons/home64x64.png" url="#"/>
+	<p:menuitem value="Home" icon="/resources/icons/home64x64.png" url="index.jsf"/>
 	<p:menuitem value="Recepcao" icon="/resources/icons/recepcao64x64.png"  url="#" />
 	<p:menuitem value="Consultorio" icon="/resources/icons/consultorio64x64.png" url="#" />
 

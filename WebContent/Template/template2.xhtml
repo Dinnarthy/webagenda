@@ -37,9 +37,15 @@
 				<p:menubar autoDisplay="false">
 	<p:submenu label="Cadastro">
 		<p:submenu label="Atendimento">
-			<p:menuitem value="Paciente" url="#" onclick="novoPaciente.show()" />
+			<p:menuitem value="Paciente" url="#"  onclick="novoPaciente.show()" />
 					
 		</p:submenu>
+		
+		<p:submenu label="Convênio">
+	
+	<p:menuitem value="Convênio" url="#" onclick="convenio.show()" />
+	
+	</p:submenu>
 		
 		<p:submenu label="Opção 2">
 		
@@ -50,6 +56,8 @@
 	<p:submenu label="Relatórios">
 	
 	</p:submenu>
+	
+	
 	
 	<p:menuitem  value="Sair" url="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout" icon="ui-icon-close"/>
 
